@@ -12,7 +12,7 @@ def about():
 
 @app.route("/predict", methods=["POST"])
 def predict():
-    data = request.get_json()
+    data = request.get_json(silent=True)
 
     if data is None:
         return jsonify({

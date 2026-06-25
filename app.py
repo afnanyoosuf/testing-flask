@@ -14,13 +14,11 @@ def about():
 def predict():
     data = request.get_json()
 
-    # Case 1: no JSON body at all
     if data is None:
         return jsonify({
             "error": "No JSON data provided"
         }), 400
 
-    # Case 2: JSON exists but age key missing
     if "age" not in data:
         return jsonify({
             "error": "Age is required"
